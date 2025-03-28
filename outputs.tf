@@ -45,11 +45,11 @@ output "cas_instance_ip" {
 output "cas_access_urls" {
   description = "CAS 访问 URL"
   value = {
-    http  = "http://${module.cas_instance.instance_ips[0]}:${var.cas_ports.http}/cas"
+    http  = "http://${module.cas_instance.instance_ips[0]}:8080/cas"
   }
 }
 
 output "ports" {
   description = "Service Ports"
-  value       = var.cas_ports.http
+  value       = 8080
 }

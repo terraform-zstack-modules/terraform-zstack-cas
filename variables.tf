@@ -75,10 +75,3 @@ variable "ssh_password" {
   sensitive   = true
 }
 
-variable "cas_ports" {
-  description = "CAS 服务端口"
-  type        = map(number)
-  default     = {
-    http  = 8080
-  }
-}

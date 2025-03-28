@@ -8,15 +8,15 @@ locals {
 module "cas_image" {
   source = "git::https://github.com/terraform-zstack-modules/terraform-zstack-image.git"
 
-  create_image        = false
+  create_image        = true
   image_name          = var.image_name
- # image_url           = var.image_url
- # guest_os_type      = "Centos 7"
- # platform           = "Linux"
- # format             = "qcow2"
- # architecture       = "x86_64"
+  image_url           = var.image_url
+  guest_os_type      = "Centos 7"
+  platform           = "Linux"
+  format             = "qcow2"
+  architecture       = "x86_64"
 
- # backup_storage_name = var.backup_storage_name
+  backup_storage_name = var.backup_storage_name
 }
 
 # 创建虚拟机实例
@@ -29,7 +29,7 @@ module "cas_instance" {
   image_uuid            = module.cas_image.image_uuid
   l3_network_name       = var.l3_network_name
   instance_offering_name = var.instance_offering_name
- # user_data = local.user_data_base64
+
 }
 
 

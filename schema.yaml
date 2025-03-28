@@ -72,18 +72,6 @@ components:
           x-walrus-ui:
             group: Basic
             order: 9
-        cas_ports:
-          title: Cas Ports
-          type: object
-          description: CAS 服务端口
-          default:
-            http: 8080
-          additionalProperties:
-            type: number
-          x-walrus-ui:
-            colSpan: 12
-            group: Basic
-            order: 10
       x-walrus-ui:
         groupOrder:
         - Basic
