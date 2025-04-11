@@ -75,3 +75,7 @@ variable "ssh_password" {
   sensitive   = true
 }
 
+variable "expunge" {
+  type  = bool
+  default = true
+}

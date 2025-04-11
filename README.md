@@ -4,6 +4,7 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+| <a name="requirement_zstack"></a> [zstack](#requirement\_zstack) | 1.0.5 |
 
 ## Providers
 
@@ -15,8 +16,8 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cas_image"></a> [cas\_image](#module\_cas\_image) | git::https://github.com/terraform-zstack-modules/terraform-zstack-image.git | n/a |
-| <a name="module_cas_instance"></a> [cas\_instance](#module\_cas\_instance) | git::https://github.com/chijiajian/terraform-zstack-instance.git | n/a |
+| <a name="module_cas_image"></a> [cas\_image](#module\_cas\_image) | git::http://172.20.14.17/jiajian.chi/terraform-zstack-image.git | v1.1.1 |
+| <a name="module_cas_instance"></a> [cas\_instance](#module\_cas\_instance) | git::http://172.20.14.17/jiajian.chi/terraform-zstack-instance.git | v1.1.1 |
 
 ## Resources
 
@@ -29,8 +30,8 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_backup_storage_name"></a> [backup\_storage\_name](#input\_backup\_storage\_name) | Name of the backup storage to use | `string` | `"Ceph"` | no |
-| <a name="input_cas_ports"></a> [cas\_ports](#input\_cas\_ports) | CAS 服务端口 | `map(number)` | <pre>{<br/>  "http": 8080<br/>}</pre> | no |
 | <a name="input_context"></a> [context](#input\_context) | Receive contextual information. When Walrus deploys, Walrus will inject specific contextual information into this field.<br/><br/>Examples:<pre>context:<br/>  project:<br/>    name: string<br/>    id: string<br/>  environment:<br/>    name: string<br/>    id: string<br/>  resource:<br/>    name: string<br/>    id: string</pre> | `map(any)` | `{}` | no |
+| <a name="input_expunge"></a> [expunge](#input\_expunge) | n/a | `bool` | `true` | no |
 | <a name="input_image_name"></a> [image\_name](#input\_image\_name) | Name for the log server image | `string` | `"cas-by-terraform"` | no |
 | <a name="input_image_url"></a> [image\_url](#input\_image\_url) | URL to download the image from | `string` | `"http://minio.zstack.io:9001/packer/cas-by-packer-image-compressed.qcow2"` | no |
 | <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name) | Name for the cas server instance | `string` | `"cas"` | no |

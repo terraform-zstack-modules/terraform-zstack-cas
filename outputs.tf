@@ -53,3 +53,9 @@ output "ports" {
   description = "Service Ports"
   value       = 8080
 }
+
+output "endpoints" {
+  value = {
+    cas_access_urls    =  "http://${module.cas_instance.instance_ips[0]}:8080/cas"
+  }
+}
